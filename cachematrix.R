@@ -33,7 +33,8 @@ cacheSolve <- function(x, ...) {
         ## If m=NULL, the function will pull the Matrix 'x' using the get() function, invert it through solve() and store it in 'm'
         data <- x$get()
         m <- solve(data)
-        x$set_inv(m)
+        x$set_inv(m) 
+        ## set_inv() caches the resulting inversed matrix for future use
         
         return(m) ## it will then return 'm'
 }
